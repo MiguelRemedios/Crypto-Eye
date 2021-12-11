@@ -44,12 +44,16 @@ const Header = () => {
       <AppBar color="transparent" position="static">
         <Container>
           <Toolbar>
-            <Typography onClick={handleClick} className={classes.title}>
+            <Typography
+              onClick={handleClick}
+              className={classes.title}
+              variant="h6"
+            >
               CRYPTO EYE
             </Typography>
             <Select
               variant="outlined"
-              style={{ width: 100, height: 40, marginLeft: 15 }}
+              style={{ width: 100, height: 40, marginRight: 15 }}
             >
               <MenuItem value={"EUR"}>EUR</MenuItem>
               <MenuItem value={"USD"}>USD</MenuItem>
