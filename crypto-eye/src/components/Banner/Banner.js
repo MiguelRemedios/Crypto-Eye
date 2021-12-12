@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Container, makeStyles } from "@material-ui/core";
+import SlideShow from "./SlideShow";
 
 const useStyles = makeStyles(() => ({
   banner: {
@@ -48,6 +49,7 @@ const Banner = () => {
             All Information About Crypto Currencies
           </Typography>
         </div>
+        <SlideShow />
       </Container>
     </div>
   );
