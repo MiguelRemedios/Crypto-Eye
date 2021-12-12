@@ -81,6 +81,9 @@ const SlideShow = () => {
     512: {
       items: 4,
     },
+    1024: {
+      items: 6,
+    },
   };
 
   return (

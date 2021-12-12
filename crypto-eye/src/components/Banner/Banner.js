@@ -46,7 +46,7 @@ const Banner = () => {
               fontFamily: "Montserrat",
             }}
           >
-            All Information About Crypto Currencies
+            All Information Available About Crypto Currencies
           </Typography>
         </div>
         <SlideShow />
