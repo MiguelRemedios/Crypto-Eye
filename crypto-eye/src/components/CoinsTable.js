@@ -18,6 +18,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import { numberWithCommas } from "./Banner/SlideShow";
 
 const useStyles = makeStyles({
   row: {
@@ -42,7 +43,7 @@ const CoinsTable = () => {
   const navigate = useNavigate();
   const classes = useStyles();
 
-  const { currency } = CryptoState();
+  const { currency, symbol } = CryptoState();
 
   const fetchCoins = async () => {
     setLoading(true);
@@ -155,6 +156,10 @@ const CoinsTable = () => {
                           </span>
                           <span style={{ color: "darkgrey" }}>{row.name}</span>
                         </div>
+                      </TableCell>
+                      <TableCell align="right">
+                        {symbol}{" "}
+                        {numberWithCommas(row.current_price.toFixed(2))}
                       </TableCell>
                     </TableRow>
                   );
