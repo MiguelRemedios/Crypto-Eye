@@ -16,10 +16,13 @@ import { CryptoState } from "../CryptoContext";
 const useStyles = makeStyles({
   title: {
     flex: 1,
-    color: "gold",
+    color: "white",
     fontFamily: "Montserrat",
     fontWeight: "bold",
     cursor: "pointer",
+  },
+  header: {
+    backgroundColor: "rgb(44, 184, 94)",
   },
 });
 
@@ -29,12 +32,10 @@ const Header = () => {
 
   const { currency, setCurrency } = CryptoState();
 
-  console.log(currency);
-
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#fff",
+        main: "rgb(50, 168, 84)",
       },
       type: "dark",
     },
@@ -46,7 +47,7 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="transparent" position="static">
+      <AppBar color="transparent" position="static" className={classes.header}>
         <Container>
           <Toolbar>
             <Typography

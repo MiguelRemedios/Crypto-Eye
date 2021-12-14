@@ -4,10 +4,12 @@ import SlideShow from "./SlideShow";
 
 const useStyles = makeStyles(() => ({
   banner: {
-    backgroundImage: "url(./banner.jpg)",
+    backgroundImage: "url(./banner2.svg)",
+    backgroundSize: "110%",
+    autoSize: true,
   },
   bannerContent: {
-    height: 400,
+    height: 550,
     display: "flex",
     flexDirection: "column",
     paddingTop: 25,
@@ -34,6 +36,7 @@ const Banner = () => {
               fontWeight: "bold",
               marginBottom: 15,
               fontFamily: "Montserrat",
+              color: "white",
             }}
           >
             CRYPTO EYE
@@ -41,7 +44,7 @@ const Banner = () => {
           <Typography
             variant="subtitle2"
             style={{
-              color: "darkgrey",
+              color: "#616161",
               textTransform: "capitalize",
               fontFamily: "Montserrat",
             }}

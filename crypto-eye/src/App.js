@@ -7,8 +7,8 @@ import CoinPage from "./Pages/CoinPage";
 
 const useStyles = makeStyles({
   App: {
-    backgroundColor: "#14161a",
-    color: "white",
+    backgroundColor: "white",
+    color: "rgb(50, 168, 84)",
     minHeight: "100vh",
   },
 });

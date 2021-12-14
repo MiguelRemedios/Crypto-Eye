@@ -84,9 +84,11 @@ const CoinsTable = () => {
           variant="h4"
           style={{
             margin: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "sans-serif",
+            fontWeight: "bold",
             marginTop: 30,
             marginBottom: 30,
+            color: "black",
           }}
         >
           CRYPTOCURRENCY PRICES BY MARKET CAP
@@ -178,7 +180,7 @@ const CoinsTable = () => {
                         {symbol}{" "}
                         {numberWithCommas(
                           row.market_cap.toString().slice(0, -6)
-                        )}
+                        )}{" "}
                         M
                       </TableCell>
                     </TableRow>
