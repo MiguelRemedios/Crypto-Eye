@@ -7,7 +7,7 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
 
@@ -32,6 +32,16 @@ const Header = () => {
   function handleClick() {
     navigate("/");
   }
+
+  useEffect(() => {
+    const currencyCustomer = localStorage.getItem("currency");
+    setCurrency(currencyCustomer);
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("currency", currency);
+  }, [currency]);
 
   return (
     <AppBar color="transparent" position="static" className={classes.header}>
