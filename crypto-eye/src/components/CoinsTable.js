@@ -64,6 +64,9 @@ const CoinsTable = () => {
       primary: {
         main: "#fff",
       },
+      secondary: {
+        main: "rgb(44, 184, 94)",
+      },
     },
   });
 
@@ -95,6 +98,7 @@ const CoinsTable = () => {
         <TextField
           label="Search for a Cryptocurrency..."
           variant="outlined"
+          color="secondary"
           style={{
             marginBottom: 20,
             width: "100%",
