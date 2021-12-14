@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     cursor: "pointer",
     textTransform: "uppercase",
-    color: "white",
+    color: "black",
   },
 }));
 

@@ -88,8 +88,8 @@ const CoinsTable = () => {
           style={{
             margin: 18,
             fontFamily: "sans-serif",
-            marginTop: 30,
-            marginBottom: 30,
+            marginTop: 40,
+            marginBottom: 60,
             color: "#2e2e2e",
           }}
         >
