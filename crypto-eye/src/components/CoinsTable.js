@@ -22,16 +22,17 @@ import { numberWithCommas } from "./Banner/SlideShow";
 
 const useStyles = makeStyles({
   row: {
-    backgroundColor: "#16171a",
+    backgroundColor: "#f2fff4",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "#131111",
+      backgroundColor: "#d1ffd8",
+      transition: "all 0.2s ease-in-out",
     },
     fontFamily: "Montserrat",
   },
   pagination: {
     "& .MuiPaginationItem-root": {
-      color: "gold",
+      color: "rgb(44, 184, 94)",
     },
   },
 });
@@ -58,12 +59,11 @@ const CoinsTable = () => {
     // eslint-disable-next-line
   }, [currency]);
 
-  const darkTheme = createTheme({
+  const theme = createTheme({
     palette: {
       primary: {
         main: "#fff",
       },
-      type: "dark",
     },
   });
 
@@ -78,17 +78,16 @@ const CoinsTable = () => {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <Container style={{ textAlign: "center" }}>
         <Typography
           variant="h4"
           style={{
             margin: 18,
             fontFamily: "sans-serif",
-            fontWeight: "bold",
             marginTop: 30,
             marginBottom: 30,
-            color: "black",
+            color: "#2e2e2e",
           }}
         >
           CRYPTOCURRENCY PRICES BY MARKET CAP
@@ -96,30 +95,73 @@ const CoinsTable = () => {
         <TextField
           label="Search for a Cryptocurrency..."
           variant="outlined"
-          style={{ marginBottom: 20, width: "100%" }}
+          style={{
+            marginBottom: 20,
+            width: "100%",
+          }}
           onChange={(e) => setSearch(e.target.value)}
         />
 
         <TableContainer>
           {loading ? (
-            <LinearProgress style={{ backgroundColor: "gold" }} />
+            <LinearProgress style={{ backgroundColor: "rgb(44, 184, 94)" }} />
           ) : (
             <Table>
-              <TableHead style={{ backgroundColor: "#EEBC1D" }}>
+              <TableHead style={{ backgroundColor: "rgb(44, 184, 94)" }}>
                 <TableRow>
-                  {columns.map((header) => (
-                    <TableCell
-                      style={{
-                        color: "black",
-                        fontWeight: "700",
-                        fontFamily: "Montserrat",
-                      }}
-                      key={header}
-                      align={header === "Coin" ? "" : "right"}
-                    >
-                      {header}
-                    </TableCell>
-                  ))}
+                  {
+                    // eslint-disable-next-line
+                    columns.map((header) => {
+                      if (header === columns[0]) {
+                        return (
+                          <TableCell
+                            style={{
+                              color: "white",
+                              fontWeight: "700",
+                              fontFamily: "sans-serif",
+                              borderTopLeftRadius: "5px",
+                            }}
+                            key={header}
+                            align={header === "Coin" ? "" : "right"}
+                          >
+                            {header}
+                          </TableCell>
+                        );
+                      } else if (
+                        header === columns[1] ||
+                        header === columns[2]
+                      ) {
+                        return (
+                          <TableCell
+                            style={{
+                              color: "white",
+                              fontWeight: "700",
+                              fontFamily: "sans-serif",
+                            }}
+                            key={header}
+                            align={header === "Coin" ? "" : "right"}
+                          >
+                            {header}
+                          </TableCell>
+                        );
+                      } else if (header === columns[3]) {
+                        return (
+                          <TableCell
+                            style={{
+                              color: "white",
+                              fontWeight: "700",
+                              fontFamily: "sans-serif",
+                              borderTopRightRadius: "5px",
+                            }}
+                            key={header}
+                            align={header === "Coin" ? "" : "right"}
+                          >
+                            {header}
+                          </TableCell>
+                        );
+                      }
+                    })
+                  }
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -137,6 +179,7 @@ const CoinsTable = () => {
                         style={{
                           display: "flex",
                           gap: 15,
+                          color: "black",
                         }}
                       >
                         <img
@@ -159,7 +202,12 @@ const CoinsTable = () => {
                           <span style={{ color: "darkgrey" }}>{row.name}</span>
                         </div>
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell
+                        align="right"
+                        style={{
+                          color: "black",
+                        }}
+                      >
                         {symbol}{" "}
                         {numberWithCommas(row.current_price.toFixed(2))}
                       </TableCell>
@@ -167,7 +215,7 @@ const CoinsTable = () => {
                         align="right"
                         style={{
                           color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-                          fontWeight: 500,
+                          fontWeight: 520,
                         }}
                       >
                         {profit && "+"}
@@ -176,7 +224,7 @@ const CoinsTable = () => {
                           : "---"}
                         %
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell align="right" style={{}}>
                         {symbol}{" "}
                         {numberWithCommas(
                           row.market_cap.toString().slice(0, -6)

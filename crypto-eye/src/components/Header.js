@@ -35,7 +35,7 @@ const Header = () => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "rgb(50, 168, 84)",
+        main: "rgb(255, 255, 255)",
       },
       type: "dark",
     },
