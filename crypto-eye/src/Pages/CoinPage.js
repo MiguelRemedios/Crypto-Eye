@@ -119,7 +119,7 @@ const CoinPage = () => {
                 fontFamily: "Montserrat",
               }}
             >
-              {symbol}
+              {symbol}{" "}
               {numberWithCommas(
                 coin?.market_data.current_price[currency.toLowerCase()]
               )}
@@ -148,7 +148,6 @@ const CoinPage = () => {
         </div>
       </div>
 
-      {/* Chart */}
       <CoinInfo coin={coin} />
     </div>
   );
