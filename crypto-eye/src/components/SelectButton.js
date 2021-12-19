@@ -19,7 +19,6 @@ const SelectButton = ({ children, selected, onClick }) => {
         transition: "ease-in-out all .2s",
       },
       width: "22%",
-      //   margin: 5,
     },
   });
 
